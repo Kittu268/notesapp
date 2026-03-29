@@ -3,7 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        # This ensures the cloud build doesn't fail on the same zod warnings
+        - npm install --legacy-peer-deps
     build:
       commands:
         - npm run build
